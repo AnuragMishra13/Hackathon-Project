@@ -1,135 +1,177 @@
-/*
-Template Name: CSS BOOTSTRAP 4 BUTTONS
-Author: Themesfinity
-Author URI: https://themesfinity.com
-Version: 1.0
-*/
-
-/* ===================================== 
-======= TABLE OF STYLE CONTENTS ========
-1. TEMPLATE BODY
-2. HEADER IMAGE STYLES
-3. SECTION STYLES
-4. FOOTER BAR STYLES
-======================================*/
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
-
-/*======= 1. TEMPLATE BODY  =======*/
 body {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-}
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    color: #3f345f;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f2f2f2;
 }
 
-/*======= 2. HEADER IMAGE STYLES  =======*/
-.about {
-    height: 65vh;
-    background-image: url(../img/about-page-bg.jpg);
-}
-.header-image-area {
-    background-image: url(../img/header.jpg);
-    height: 100vh;
-    width: 100%;
-    background-position: 50% 0;
-    background-size: cover;
-    position: relative;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 85%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 85%);
-}
-.header-image-area:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(53, 56, 152, 0.9)), color-stop(rgba(40, 42, 85, 0.8)), to(rgba(21, 27, 51, 0.8)));
-    background-image: -webkit-linear-gradient(top, rgba(53, 56, 152, 0.9), rgba(40, 42, 85, 0.8), rgba(21, 27, 51, 0.8));
-    background-image: -o-linear-gradient(top, rgba(53, 56, 152, 0.9), rgba(40, 42, 85, 0.8), rgba(21, 27, 51, 0.8));
-    background-image: linear-gradient(to bottom, rgba(53, 56, 152, 0.9), rgba(40, 42, 85, 0.8), rgba(21, 27, 51, 0.8))
-}
-.intro-text {
-    position: absolute;
-    left: 0%;
-    top: 37%;
-    margin: auto;
-    right: 0;
-    text-align: center
-}
-.intro-text h1 {
-    text-transform: uppercase;
-    font-size: 42px;
-    letter-spacing: 1px;
-    color: #fff;
-    margin-bottom: 10px;
-    font-weight: 900;
-    letter-spacing: 1px
-}
-.intro-text h3 {
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #e5e5e5;
-    font-weight: 400;
-    line-height: 28px
+/* Centered container */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4%;
 }
 
-/*======= 3. SECTION STYLES  =======*/
-.section-padding {
-    padding: 80px 0;
-}
-.section-title {
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-image: url("img/title-bg.png");
-    background-origin: padding-box;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: 189px auto;
-    padding-bottom: 80px;
-}
-.section-title .badge {
-    margin: 0 0 14px;
-}
-.section-title-line {
-    background: rgba(0, 0, 0, 0) url("img/line.png") repeat scroll 0 0;
-    display: inline-block;
-    height: 5px;
-    width: 53px;
-}
-.page-btn .btn {
-    margin: 6px 3px;
-}
-.badge {
-    border-radius: 100px;
-    font-size: 14px;
-    font-stretch: normal;
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: 1px;
-    line-height: normal;
-    padding: 15px 15px;
-    text-transform: uppercase;
-}
-.badge-primary {
-    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+/* Form */
+form {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
-/*======= 4. FOOTER BAR STYLES  =======*/
-.footer-bar {
-    float: left;
-    width: 100%;
-    background-color: #101010;
-    padding: 20px 0;
+h1 {
+  color: #444;
+  text-align: center;
+  font-size: 36px;
 }
-.footer-bar p {
-    margin: 0;
-    font-size: 16px;
-    color: #929292;
-    font-weight: 500;
+
+/* Text fields */
+.txt_field {
+  position: relative;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
-.footer-bar a {
-    color: #fff;
-}	
+
+.txt_field input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #444;
+  border: none;
+  border-bottom: 2px solid #999;
+  outline: none;
+}
+
+.txt_field label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 16px;
+  color: #999;
+  transition: all 0.3s ease-in-out;
+}
+
+.txt_field input:focus~label,
+.txt_field input:valid~label {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #0077ff;
+}
+
+/* Adjust size of input fields */
+#name,
+#surname,
+#password,
+#confirm-password {
+  width: 48%;
+}
+
+#username,
+#email {
+  width: 100%;
+}
+
+/* Submit button */
+#signup {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#signup:hover {
+  background-color: #0077ff;
+}
+
+/* Existing account link */
+#existing-acc {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+#existing-acc a {
+  color: #0077ff;
+  text-decoration: none;
+}
+
+#existing-acc a:hover {
+  text-decoration: underline;
+}
+
+#login {
+  text-indent: 420%;
+  font-weight: bold;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  background-color: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.separator {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  display: inline-block;
+  width: 40%;
+  border-top: 1px solid #ccc;
+  vertical-align: middle;
+}
+
+.separator::before {
+  margin-right: 10px;
+}
+
+.separator::after {
+  margin-left: 10px;
+}
+
+.separator span {
+  font-size: small;
+  color:grey;
+  padding: 0 10px;
+  position: relative;
+  display: inline-block;
+}
+
+#login-signup{
+  flex:1;
+  position:relative;
+  left:35.5%;
+  width:29%;
+  display: block;
+  padding: 10px;
+  background-color: #0077ff;
+  font-weight:bold;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}

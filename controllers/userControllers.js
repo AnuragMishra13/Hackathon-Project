@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const user = require("../models/user");
 
 const postSignup = async (req,res)=>{
+    const firstname = req.body.first;
+    const lastname = req.body.last;
     const password = req.body.password;
     const username = req.body.username;
     const email = req.body.email;
@@ -10,6 +12,8 @@ const postSignup = async (req,res)=>{
     const hashPassword = await bcrypt.hash(password,10);
 
     const data = {
+        name:firstname,
+        surname:lastname,
         username:username,
         email:email,
         password:hashPassword
@@ -22,14 +26,12 @@ const postSignup = async (req,res)=>{
 
 const postLogin = async (req,res)=>{
     try {
-        
         const password = req.body.password;
         const check = await user.findOne({email:req.body.email});
         const matchPassword = bcrypt.compare(password , check.password);
         if(matchPassword){
-            res.redirect(302,"http://localhost:3000/home");
+            return res.redirect("http://localhost:3000/home")
         }
-
         else{
             return res.send("Wrong Password");
         }

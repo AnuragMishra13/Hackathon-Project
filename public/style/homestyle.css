@@ -11,15 +11,16 @@
     position: relative;
 }
 
+
 nav{
     display:flex;
-    padding : 2% 6%;
+    padding : 2% 3%;
     justify-content: space-between;
     align-content: center;
 }
 
 nav img{
-    width: 150px;
+    width: 200px;
 }
 
 .nav-links{
@@ -36,17 +37,17 @@ nav img{
 
 .nav-links ul li a{
     text-decoration: none;
-    font-weight: bolder;
+    font-weight: bold;
     color: aliceblue;
     font-size: 17px;
-    font-family: 'Tilt Warp';
-}
+    font-family: 'Josefin Sans', sans-serif;
+};
 
 .nav-links ul li::after{
     content: '';
     width: 0%;
     height: 2px;
-    background: #f44336;
+    background: black;
     display: block;
     margin: auto;
     transition: 0.5s;

@@ -15,22 +15,21 @@
     <form method="post">
 
         <div class="txt_field">
-            <input type="text" id="name" placeholder="Name" required>
-            <input type="text" id="surname" placeholder="Last Name" required>
-        </div>
-
-        <div class="txt_field">
-            <input type="text" id="username"placeholder="Username" required>
+            <input type="text" id="name" placeholder="Name" required="true">
+            <input type="text" id="surname" placeholder="Last Name" required="true">
         </div>
         <div class="txt_field">
-            <input type="text" id="email" placeholder="E-mail" required>
+            <input type="text" id="username"placeholder="Username" required="true">
         </div>
         <div class="txt_field">
-            <input type="password" id="password" placeholder="Password" required>
-            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <input type="text" id="email" placeholder="E-mail" required="true">
+        </div>
+        <div class="txt_field">
+            <input type="password" id="password" placeholder="Password" required="true">
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required="true">
         </div>
         <div><input type="submit" id="signup" value="SIGN UP"></div>
-        <div id="existing-acc">Already have an account? <a href="#">Login</a></div>
+        <div id="existing-acc">Already have an account? <a type="button" onclick="window.location.href='login'" >Login</a></div>
     </form>
     <script></script>
 </body>

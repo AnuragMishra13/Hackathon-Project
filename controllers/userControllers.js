@@ -6,21 +6,27 @@ require("dotenv").config();
 
 
 const postSignup = async (req,res)=>{
-    const password = req.body.password;
-    const username = req.body.username;
-    const email = req.body.email;
-    const token = await jwt.sign(email,process.env.SECRETKEY);
-
-    const hashPassword = await bcrypt.hash(password,10);
-
-    const data = {
-        username:username,
-        email:email,
-        password:hashPassword,
-        token:token
+    try {
+        const password = req.body.password;
+        const confirmpassword = req.body.confirmpassword;
+        if(password === confirmpassword){
+            const hashPassword = await bcrypt.hash(password,10);
+            const token = jwt.sign({ _id: user._id }, process.env.SECRETKEY)
+            console.log("hi")
+            const UserRegister = new user({
+                username:req.body.username,
+                email:req.body.email,
+                password:hashPassword,
+                token:token
+            })
+            console.log("hello")
+            await UserRegister.save();
+            console.log(UserRegister)
+            return res.redirect("http://localhost:3000/home")
+        }
+    } catch (error) {
+        res.status(500).send(error);
     }
-
-    await user.insertMany([data]);
 }
 
 const postLogin = async (req,res)=>{

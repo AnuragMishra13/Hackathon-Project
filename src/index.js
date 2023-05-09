@@ -19,7 +19,7 @@ app.get("/home",(req,res)=>{
     res.render("index")
 })
 app.post("/login",postLogin);
-app.post("/signup",postSignup);
+app.post("/signup#",postSignup);
 app.get("/editor",(req,res)=>{
     res.render("editor");
 })

@@ -9,7 +9,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top:500px;
 }
 
 #logo {
@@ -64,19 +63,6 @@ header {
     transform: scaleX(1);
 }
 
-.navigation .btnSignUp {
-    width: 130px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid #FFFF;
-    outline: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #FFFF;
-    font-weight: bold;
-    margin-left: 40px;
-}
 
 .navigation .btnLogin {
     width: 130px;
@@ -116,9 +102,8 @@ header {
     display:flex;
     justify-content: center;
     align-items: center;
-
+    margin-top:450px;
 }
-
 
 #text{
     position: absolute;
@@ -133,6 +118,7 @@ header {
     justify-content: center;
     align-items: center;
     pointer-events: none;
+
 
 }
 

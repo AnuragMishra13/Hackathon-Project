@@ -14,19 +14,22 @@ let backtree=document.getElementById('backtree')
 let mountain=document.getElementById('mountain')
 
 signuplink.addEventListener('click', () => {
+    window.history.pushState(null,null,"/signup")
     wrapper.classList.add('active');
 })
 
 loginlink.addEventListener('click', () => {
+    window.history.pushState(null,null,"/login")
     wrapper.classList.remove('active');
 })
 
 loginpop.addEventListener('click', () => {
-    window.history.pushState(null,null,"users/login")
+    window.history.pushState(null,null,"/login")
     wrapper.classList.add('active-popup');
 })
 
 closebtn.addEventListener('click', () => {
+    window.history.pushState(null,null,"/home")
     wrapper.classList.remove('active-popup');
 })
 

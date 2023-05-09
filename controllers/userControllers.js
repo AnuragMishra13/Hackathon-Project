@@ -1,18 +1,23 @@
 const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 const user = require("../models/user");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
+
 
 const postSignup = async (req,res)=>{
     const password = req.body.password;
     const username = req.body.username;
     const email = req.body.email;
+    const token = await jwt.sign(email,process.env.SECRETKEY);
 
     const hashPassword = await bcrypt.hash(password,10);
 
     const data = {
         username:username,
         email:email,
-        password:hashPassword
+        password:hashPassword,
+        token:token
     }
 
     await user.insertMany([data]);

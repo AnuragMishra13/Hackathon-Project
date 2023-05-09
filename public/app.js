@@ -14,6 +14,7 @@ loginlink.addEventListener('click', () => {
 })
 
 loginpop.addEventListener('click', () => {
+    window.history.pushState(null,null,"users/login")
     wrapper.classList.add('active-popup');
 })
 

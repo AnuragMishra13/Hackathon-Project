@@ -11,42 +11,114 @@
 </head>
 
 <body>
-  <section class="header">
-    <nav>
-      <a href="/"><img src="./images/logo.png " /></a>
-      <div class="nav-links">
-        <ul>
-          <li><a href="/">HOME</a></li>
-          <li><a href="/about">ABOUT</a></li>
-          <li><a href="/task">TASK</a></li>
-          <li><a href="/users/signup">Sign Up</a></li>
-          <li><a href="/users/login">Login</a></li>
-        </ul>
-      </div>
+  <!-- class="video">
+    <video autoplay loop muted plays-inline class="backgorund">
+    <source src="./images/background.mp4" />
+  </video> -->
+  <header>
+    <a href="/"><img id="logo" src="./images/logo.png " /></a>
+    <nav class="navigation">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/task">Task</a>
+      <button class="btnLogin">Login</button>
     </nav>
+  </header>
+  <div>    <section class="parallax">
+      <img src="/images/1.png">
+      <img src="/images/2.png">
+      <img src="/images/3.png">
+      <img src="/images/4.png">
+      <img src="/images/5.png">
+      <img src="/images/6.png">
+      <img src="/images/7.png">
+      <h2 id="text">Versatile</h2>
+    </section>
+    <div class="wrapper">
+      <span class="icon-close">
+        <ion-icon name="close"></ion-icon>
+      </span>
 
-    <video autoplay loop muted plays-inline class="back">
-      <source src="./images/background.mp4" />
-    </video>
-  </section>
+      <div class="form-box login">
+        <h2>Login</h2>
+        <form method="post">
 
-  <section class="footer">
-    <h1>Tools We Offer</h1>
-    <div class="tabs">
-      <div class="tool-col">
-        <a href="/editor"><img src="./images/Editor.png" /></a>
-        <h3>Editor</h3>
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="at"></ion-icon>
+            </span>
+            <input type="email" required>
+            <label>Email</label>
+          </div>
+
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="lock-closed"></ion-icon>
+            </span>
+            <input type="password" required>
+            <label>Password</label>
+          </div>
+
+          <div class="remember">
+            <label><input type="checkbox" class="remember-forgot">Remember Me</label>
+            <a href="#">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn">Login</button>
+
+          <div class="login-register">
+            <p>Don't have an account?<a href="#" class="signup-link"> Register</a></p>
+          </div>
+        </form>
       </div>
-      <div class="tool-col">
-        <img src="./images/template.png" />
-        <h3>Templates</h3>
-      </div>
-      <div class="tool-col">
-        <img src="./images/communities.png" />
-        <h3>Community</h3>
+
+      <div class="form-box signup">
+        <h2>Sign Up</h2>
+        <form method="post">
+
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="person"></ion-icon>
+            </span>
+            <input type="email" required>
+            <label>Username</label>
+          </div>
+
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="at"></ion-icon>
+            </span>
+            <input type="email" required>
+            <label>Email</label>
+          </div>
+
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="lock-closed"></ion-icon>
+            </span>
+            <input type="password" required>
+            <label>Password</label>
+          </div>
+
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="lock-closed"></ion-icon>
+            </span>
+            <input type="password" required>
+            <label>Confirm Password</label>
+          </div>
+          <button type="submit" class="btn">Sign Up</button>
+          <div class="login-register">
+            <p>Already have an account?<a href="#" class="login-link"> Login</a></p>
+          </div>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+  <script src="/app.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

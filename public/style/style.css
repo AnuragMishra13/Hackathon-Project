@@ -3,6 +3,11 @@ body {
   background-color: #f2f2f2;
 }
 
+nav img{
+  margin:10px;
+width:200px;
+}
+
 /* Centered container */
 .center {
   display: flex;

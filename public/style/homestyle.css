@@ -5,11 +5,59 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
+body{
+    background-color: rgb(19, 15, 50);
+}
+
+img{
+    width:100%
+}
+
+
+
+.footer{
+    position:relative;
+    top:0;
+    width: 100%;
+    text-align: center;
+    padding: 100px;
+}
+
+
+.tabs{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tool-col{
+    flex-basis: 25%;
+    background: transparent;
+    border:3px solid white;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+
+.tool-col:hover{
+    border: 1px solid #1c1646;
+    background:#1c1646;
+    backdrop-filter: blur(20px);
+    flex-basis: 30%;
+}
+
+.tool-col img{
+    padding-top: 50px;
+    padding-bottom:150px;
+    width: 50%;
+}
 
 #logo {
     position: relative;
     width: 250px;
-    right: 50px;
 }
 
 header {
@@ -20,24 +68,21 @@ header {
     width: 100%;
     padding: 20px 100px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     z-index: 99;
 }
 
-.navigation {
-    position: relative;
-    left: 200px;
-}
 
 .navigation a {
     position: relative;
     font-size: 16.1px;
-    left: 250px;
     color: #FFFF;
     text-decoration: none;
     font-weight: bold;
     margin-left: 40px;
+    padding-top:10px;
+    right:400px;
 }
 
 .navigation a::after {
@@ -72,9 +117,8 @@ header {
     font-size: 16px;
     color: #FFFF;
     font-weight: bold;
-    margin-left: 40px;
     transition: .5s;
-    margin-left: 700px;
+    margin-left: 40px;
 }
 
 .navigation .btnSignup {
@@ -112,40 +156,25 @@ header {
     z-index: -1px;
 }
 
-
-.parallax {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 450px;
-}
-
 #text {
     position: absolute;
     font-size: 90px;
     color: White;
     text-align: center;
+    top:400px;
     left: 0;
     right: 0;
     text-shadow: 0 0 30px rgba(0, 0, 0, 10);
 }
 
-.parallax img {
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-}
-
 .wrapper {
-    position: relative;
+    position: absolute;
     width: 400px;
     height: 440px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(100px);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     display: flex;
     justify-content: center;
@@ -153,12 +182,13 @@ header {
     overflow: hidden;
     transform: scale(0);
     transition: transform .5s ease, height .2s ease;
-    top: -220px;
-    margin-left: 750px;
+    top:50%;
+    left:50%;
 }
 
 .wrapper.active-popup {
-    transform: scale(1);
+    transition: transform .5s ease, height .2s ease;
+    transform: translate(-50%,-50%);
 }
 
 .wrapper.active {
@@ -196,20 +226,18 @@ header {
 
 .wrapper .icon-close {
     position: absolute;
-    top: 0;
-    right: 0;
+    top:0;
+    right:0;
     width: 45px;
     height: 45px;
     cursor: pointer;
     font-size: 42px;
     color: white;
+    justify-content: center;
+    align-items: center;
     background-color: black;
     border-bottom-left-radius: 20px;
-}
-
-.wrapper.active-popup.active .icon-close {
-    background-color: none;
-    display: none;
+    z-index: 1;
 }
 
 .form-box h2 {
@@ -314,6 +342,13 @@ header {
     text-decoration: underline;
 }
 
-h3 {
-    color: black;
+h2 {
+    color: white;
+    font-size:48px;
+    margin-bottom: 60px;
+}
+
+.footer h1{
+    color:white;
+    font-size:64px;
 }

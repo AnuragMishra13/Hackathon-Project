@@ -239,11 +239,6 @@ header {
     z-index: 1;
 }
 
-.wrapper.active-popup.active .icon-close {
-    background-color: none;
-    display: none;
-}
-
 .form-box h2 {
     font-size: 32px;
     color: white;

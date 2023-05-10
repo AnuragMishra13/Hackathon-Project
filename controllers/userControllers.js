@@ -11,20 +11,19 @@ const postSignup = async (req,res)=>{
         const confirmpassword = req.body.confirmpassword;
         if(password === confirmpassword){
             const hashPassword = await bcrypt.hash(password,10);
-            const token = jwt.sign({ _id: user._id }, process.env.SECRETKEY)
-            console.log("hi")
             const UserRegister = new user({
                 username:req.body.username,
                 email:req.body.email,
                 password:hashPassword,
                 token:token
             })
-            console.log("hello")
+            UserRegister.generateAuthtoken();
             await UserRegister.save();
             console.log(UserRegister)
             return res.redirect("http://localhost:3000/home")
         }
     } catch (error) {
+        console.log(error)
         res.status(500).send(error);
     }
 }

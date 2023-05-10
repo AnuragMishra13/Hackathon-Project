@@ -27,7 +27,7 @@ const UserSchema = mongoose.Schema({
 UserSchema.methods.generateAuthtoken = async function(){
     try {
         const Uniquetoken = await jwt.sign({_id:this._id.toString()},process.env.SECRETKEY)
-        this.tokens = this.tokens.concat({token:Uniquetoken});
+        this.token = Uniquetoken;
         await this.save()
         return Uniquetoken;    
     } catch (error) {

@@ -14,8 +14,7 @@ const postSignup = async (req,res)=>{
             const UserRegister = new user({
                 username:req.body.username,
                 email:req.body.email,
-                password:hashPassword,
-                token:token
+                password:hashPassword
             })
             UserRegister.generateAuthtoken();
             await UserRegister.save();
@@ -33,6 +32,8 @@ const postLogin = async (req,res)=>{
         const password = req.body.password;
         const check = await user.findOne({email:req.body.email});
         const matchPassword = bcrypt.compare(password , check.password)
+        const token = await check.generateAuthtoken();
+        console.log(token) ;
         if(matchPassword){
             return res.redirect("http://localhost:3000/home");
         }

@@ -23,6 +23,10 @@ loginlink.addEventListener('click', () => {
     wrapper.classList.remove('active');
 })
 
+// signuppop.addEventListener('click',()=>{
+//     wrapper.classList.add('active-popup');
+// })
+
 loginpop.addEventListener('click', () => {
     window.history.pushState(null,null,"/login")
     wrapper.classList.add('active-popup');

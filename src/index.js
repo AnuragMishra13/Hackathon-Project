@@ -25,8 +25,8 @@ app.get("/editor",(req,res)=>{
     res.render("editor");
 })
 
-app.post("/editor",(req,res)=>{
-    alert("hi");
+app.get("/userpage",(req,res)=>{
+    res.render('userpage')
 })
 
 mongoose.connect(process.env.MONGO_URL)

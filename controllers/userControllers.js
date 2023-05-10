@@ -17,7 +17,6 @@ const postSignup = async (req,res)=>{
                 password:hashPassword
             })
             UserRegister.generateAuthtoken();
-            await UserRegister.save();
             return res.redirect("http://localhost:3000/home")
         }
     } catch (error) {

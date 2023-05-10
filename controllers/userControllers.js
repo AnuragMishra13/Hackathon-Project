@@ -18,7 +18,6 @@ const postSignup = async (req,res)=>{
             })
             UserRegister.generateAuthtoken();
             await UserRegister.save();
-            console.log(UserRegister)
             return res.redirect("http://localhost:3000/home")
         }
     } catch (error) {
@@ -31,12 +30,11 @@ const postLogin = async (req,res)=>{
     try {
         const password = req.body.password;
         const check = await user.findOne({email:req.body.email});
-        const matchPassword = bcrypt.compare(password , check.password)
-        const token = await check.generateAuthtoken();
-        console.log(token) ;
-        if(matchPassword){
+        bcrypt.compare(password , check.password).then(()=>{
+            const token = check.generateAuthtoken();
+            console.log(token) ;
             return res.redirect("http://localhost:3000/home");
-        }
+        })
         res.send("Invalid password");
 
     } catch (error) {

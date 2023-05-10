@@ -16,7 +16,11 @@ const postSignup = async (req,res)=>{
                 email:req.body.email,
                 password:hashPassword
             })
-            UserRegister.generateAuthtoken();
+            const token = UserRegister.generateAuthtoken();
+            // res.cookie("jwt",token,{
+            //   expires:new Date(Date.now()+600000),
+            //   httpOnly:true
+            // })
             return res.redirect("http://localhost:3000/home")
         }
     } catch (error) {
@@ -34,6 +38,10 @@ const postLogin = async (req,res)=>{
         if (matchPassword) {
           const token = check.generateAuthtoken();
           console.log(token);
+          // res.cookie("jwt",token,{
+          //   expires:new Date(Date.now()+600000),
+          //   httpOnly:true
+          // })
           res.redirect(`http://localhost:3000/home/${check._id}`);
         } else {
           res.send("Invalid");

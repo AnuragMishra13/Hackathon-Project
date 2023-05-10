@@ -7,7 +7,7 @@ const {postLogin,postSignup,getLogin,getSignup} = require("../controllers/userCo
 router.use(express.json());
 router.use(express.urlencoded({extended:false}));
 
-router.route("/login").get(getLogin).post(postLogin);
-router.route("/signup").get(getSignup).post(postSignup);
+router.route("/login").post(postLogin);
+router.route("/signup").post(postSignup);
 
 module.exports = router ;

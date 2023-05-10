@@ -10,7 +10,6 @@
     position: relative;
     width: 250px;
     right: 50px;
-    margin-right:260px;
 }
 
 header {
@@ -34,6 +33,7 @@ header {
 .navigation a {
     position: relative;
     font-size: 16.1px;
+    left: 250px;
     color: #FFFF;
     text-decoration: none;
     font-weight: bold;
@@ -61,6 +61,7 @@ header {
 
 
 .navigation .btnLogin {
+    position: relative;
     width: 130px;
     height: 50px;
     background: transparent;
@@ -73,10 +74,11 @@ header {
     font-weight: bold;
     margin-left: 40px;
     transition: .5s;
-    margin-left:500px;
+    margin-left: 700px;
 }
 
-.navigation .btnSignup{
+.navigation .btnSignup {
+    position: relative;
     width: 130px;
     height: 50px;
     background: transparent;
@@ -101,7 +103,6 @@ header {
     border-color: black;
     background: #FFF;
     color: black
-
 }
 
 .background {
@@ -112,25 +113,25 @@ header {
 }
 
 
-.parallax{
-    position:relative;
-    display:flex;
+.parallax {
+    position: relative;
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-top:450px;
+    margin-top: 450px;
 }
 
-#text{
+#text {
     position: absolute;
     font-size: 90px;
-    color:White;
-    text-align:center;
-    left:0;
-    right:0;
+    color: White;
+    text-align: center;
+    left: 0;
+    right: 0;
     text-shadow: 0 0 30px rgba(0, 0, 0, 10);
 }
 
-.parallax img{
+.parallax img {
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -149,15 +150,15 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow:hidden;
-    transform:scale(0);
+    overflow: hidden;
+    transform: scale(0);
     transition: transform .5s ease, height .2s ease;
-    top:-220px;
-    margin-left:750px;
+    top: -220px;
+    margin-left: 750px;
 }
 
-.wrapper.active-popup{
-    transform:scale(1);
+.wrapper.active-popup {
+    transform: scale(1);
 }
 
 .wrapper.active {
@@ -182,7 +183,7 @@ header {
 
 .wrapper .form-box.signup {
     position: absolute;
-    transition:none;
+    transition: none;
     transform: translateX(500px);
 
 }
@@ -195,20 +196,20 @@ header {
 
 .wrapper .icon-close {
     position: absolute;
-    top:0;
-    right:0;
+    top: 0;
+    right: 0;
     width: 45px;
     height: 45px;
     cursor: pointer;
-    font-size:42px;
-    color:white;
+    font-size: 42px;
+    color: white;
     background-color: black;
     border-bottom-left-radius: 20px;
 }
 
 .wrapper.active-popup.active .icon-close {
-    background-color:none;
-    display:none;
+    background-color: none;
+    display: none;
 }
 
 .form-box h2 {
@@ -313,6 +314,6 @@ header {
     text-decoration: underline;
 }
 
-h3{
-    color:black;
+h3 {
+    color: black;
 }

@@ -1,16 +1,16 @@
 const express = require("express");
 const app = express()
 const mongoose = require("mongoose");
-const dotenv = require("dotenv");
+require("dotenv").config();
 const path = require("path");
-const usersRoutes = require("../routes/userRoutes");
+// const usersRoutes = require("../routes/userRoutes");
+const {postSignup,postLogin} = require("../controllers/userControllers");
 
 const PORT = process.env.PORT || 3000; 
 
-dotenv.config();
-
-app.use('/users',usersRoutes)
-
+// app.use('/users',usersRoutes)
+app.use(express.json())
+app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,"../public")))
 
 app.set("view engine","ejs");
@@ -18,7 +18,8 @@ app.set("view engine","ejs");
 app.get("/home",(req,res)=>{
     res.render("index")
 })
-
+app.post("/login",postLogin);
+app.post("/signup#",postSignup);
 app.get("/editor",(req,res)=>{
     res.render("editor");
 })

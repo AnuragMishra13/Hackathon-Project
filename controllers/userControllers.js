@@ -1,40 +1,43 @@
 const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 const user = require("../models/user");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
+
 
 const postSignup = async (req,res)=>{
-    const firstname = req.body.first;
-    const lastname = req.body.last;
-    const password = req.body.password;
-    const username = req.body.username;
-    const email = req.body.email;
-
-    const hashPassword = await bcrypt.hash(password,10);
-
-    const data = {
-        name:firstname,
-        surname:lastname,
-        username:username,
-        email:email,
-        password:hashPassword
+    try {
+        const password = req.body.password;
+        const confirmpassword = req.body.confirmpassword;
+        if(password === confirmpassword){
+            const hashPassword = await bcrypt.hash(password,10);
+            const token = jwt.sign({ _id: user._id }, process.env.SECRETKEY)
+            console.log("hi")
+            const UserRegister = new user({
+                username:req.body.username,
+                email:req.body.email,
+                password:hashPassword,
+                token:token
+            })
+            console.log("hello")
+            await UserRegister.save();
+            console.log(UserRegister)
+            return res.redirect("http://localhost:3000/home")
+        }
+    } catch (error) {
+        res.status(500).send(error);
     }
-
-    await user.insertMany([data]);
-
-    res.render("login");
 }
 
 const postLogin = async (req,res)=>{
     try {
         const password = req.body.password;
         const check = await user.findOne({email:req.body.email});
-        const matchPassword = bcrypt.compare(password , check.password);
+        const matchPassword = bcrypt.compare(password , check.password)
         if(matchPassword){
-            return res.redirect("http://localhost:3000/home")
+            return res.redirect("http://localhost:3000/home");
         }
-        else{
-            return res.send("Wrong Password");
-        }
+        res.send("Invalid password");
 
     } catch (error) {
         console.log(error);
@@ -42,14 +45,6 @@ const postLogin = async (req,res)=>{
     }
 }
 
-const getSignup = (req,res)=>{
-    res.render("signup")
-}
-
-const getLogin = (req,res)=>{
-    res.render("login")
-}
-
 module.exports = {
-    postLogin,postSignup,getLogin,getSignup
+    postLogin,postSignup
 }

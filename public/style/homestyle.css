@@ -95,6 +95,15 @@ nav p{
 
 }
 
+#welcome{
+    display:block;
+    margin-top:-15px;
+}
+#email{
+    display:block;
+    margin-top:15px;
+}
+
 .navigation a::after {
     content: '';
     position: absolute;

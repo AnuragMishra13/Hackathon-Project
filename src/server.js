@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const path = require("path");
 const User = require("../models/user")
+
 const { postSignup, postLogin } = require("../controllers/userControllers");
 
 const PORT = process.env.PORT || 3000;
@@ -30,7 +31,6 @@ app.get("/home/:_id", async (req, res) => {
         console.log(error)
     }
 })
-
 
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {

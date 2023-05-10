@@ -1,56 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ET Website</title>
-    <link rel="stylesheet" href="/style/homestyle.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Gloock&family=PT+Sans:wght@700&family=Tilt+Warp&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <section class="header">
-      <nav>
-        <a href="/"><img src="./images/logo.png " /></a>
-        <div class="nav-links">
-          <ul>
-            <li><a href="/">HOME</a></li>
-            <li><a href="/about">ABOUT</a></li>
-            <li><a href="/task">TASK</a></li>
-            <li><a href="/users/login">LogIn</a></li>
-            <li><a href="/users/signup">SignUp</a></li>
-          </ul>
-        </div>
-      </nav>
 
-      <video autoplay loop muted plays-inline class="back">
-        <source src="./images/background.mp4" />
-      </video>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Versatile</title>
+  <link rel="stylesheet" href="/style/homestyle.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+</head>
 
-      <div class="text-box">
-        <h1>Easy Simple Clean</h1>
-      </div>
+<body>
+  <header>
+    <a href="/"><img id="logo" src="./images/logo.png " /></a>
+    <nav class="navigation">
+      <a href="/home">Home</a>
+      <a href="/about">About</a>
+      <a href="/task">Task</a>
+      <button class="btnLogin">Login</button>
+      <button class="btnSignup">Sign Up</button>
+    </nav>
+  </header>
+  <div>
+    <section class="parallax">
+      <img id="sky" src="/images/sky.png">
+      <img id="mountain" src="/images/mountain.png">
+      <h2 id="text">Versatile</h2>
+      <img id="backtree" src="/images/back_tree.png">
+      <img id="river" src="/images/river.png">
+      <img id="lefttree" src="/images/left_tree.png">
+      <img id="righttree" src="/images/right_tree.png">
+
     </section>
+    <div class="wrapper">
+      <span class="icon-close">
+        <ion-icon name="close"></ion-icon>
+      </span>
+      <div class="form-box login">
+        <h2>Login</h2>
+        <form method="post">
 
-    <section class="footer">
-      <h1>Tools We Offer</h1>
-      <div class="tabs">
-        <div class="tool-col">
-          <a href="/editor"><img src="./images/Editor.png" /></a>
-          <h3>Editor</h3>
-        </div>
-        <div class="tool-col">
-          <img src="./images/template.png" />
-          <h3>Templates</h3>
-        </div>
-        <div class="tool-col">
-          <img src="./images/communities.png" />
-          <h3>Community</h3>
-        </div>
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="at"></ion-icon>
+            </span>
+            <input type="email" name="email" required>
+            <label>Email</label>
+          </div>
+
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="lock-closed"></ion-icon>
+            </span>
+            <input type="password" name="password" required>
+            <label>Password</label>
+          </div>
+
+          <div class="remember">
+            <label><input type="checkbox" class="remember-forgot">Remember Me</label>
+            <a href="#">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn">Login</button>
+
+          <div class="login-register">
+            <p>Don't have an account? <a href="#" class="signup-link">Register</a></p>
+          </div>
+        </form>
       </div>
-    </section>
-  </body>
+
+      <div class="form-box signup">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="post">
+
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="person"></ion-icon>
+            </span>
+            <input type="username" name="username" required>
+            <label>Username</label>
+          </div>
+
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="at"></ion-icon>
+            </span>
+            <input type="email" name="email" required>
+            <label>Email</label>
+          </div>
+
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="lock-closed"></ion-icon>
+            </span>
+            <input type="password" name="password" required>
+            <label>Password</label>
+          </div>
+
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="lock-closed"></ion-icon>
+            </span>
+            <input type="password" name="confirmpassword" required>
+            <label>Confirm Password</label>
+          </div>
+          <button type="submit" class="btn">Sign Up</button>
+          <div class="login-register">
+            <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
 </html>

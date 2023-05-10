@@ -73,12 +73,8 @@ header {
     z-index: 99;
 }
 
-.navigation ul li {
-    list-style-type: none ;
-    display:flex;
-}
 
-.navigation ul li a {
+.navigation a {
     position: relative;
     font-size: 16.1px;
     color: #FFFF;

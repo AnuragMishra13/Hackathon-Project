@@ -4,33 +4,33 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const path = require("path");
 const User = require("../models/user")
-const {postSignup,postLogin} = require("../controllers/userControllers");
+const { postSignup, postLogin } = require("../controllers/userControllers");
 
-const PORT = process.env.PORT || 3000; 
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json())
-app.use(express.urlencoded({extended:false}));
-app.use(express.static(path.join(__dirname,"../public")))
-app.set("view engine","ejs");
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "../public")))
+app.set("view engine", "ejs");
 
-app.get("/home",(req,res)=>{
+app.get("/home", (req, res) => {
     res.render("index")
 })
-app.post("/login",postLogin);
-app.post("/signup",postSignup);
-app.get("/editor",(req,res)=>{
+app.post("/login", postLogin);
+app.post("/signup", postSignup);
+app.get("/editor", (req, res) => {
     res.render("editor");
 })
 
-app.get("/userpage",(req,res)=>{
+app.get("/userpage", (req, res) => {
     res.render('userpage',)
 
-    res.render('userpage',{username:"Anurag"})
+    res.render('userpage', { username: "Anurag" })
 })
 
-app.get("/home/:_id",async (req,res)=>{
+app.get("/home/:_id", async (req, res) => {
     try {
-       const userDetails = await User.findOne(req.params)
+        const userDetails = await User.findOne(req.params)
 
     } catch (error) {
         console.log(error)
@@ -39,11 +39,11 @@ app.get("/home/:_id",async (req,res)=>{
 
 
 mongoose.connect(process.env.MONGO_URL)
-.then(()=>{
-    app.listen(PORT,()=>{
-        console.log(`Listening at port ${PORT}`);
-    });
-})
-.catch((error)=>{
-    console.log(error)
-})
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log(`Listening at port ${PORT}`);
+        });
+    })
+    .catch((error) => {
+        console.log(error)
+    })

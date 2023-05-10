@@ -174,7 +174,7 @@ header {
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(100px);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     display: flex;
     justify-content: center;
@@ -182,12 +182,13 @@ header {
     overflow: hidden;
     transform: scale(0);
     transition: transform .5s ease, height .2s ease;
-    top:250px;
-    left:750px;
+    top:50%;
+    left:50%;
 }
 
 .wrapper.active-popup {
-    transform: scale(1);
+    transition: transform .5s ease, height .2s ease;
+    transform: translate(-50%,-50%);
 }
 
 .wrapper.active {

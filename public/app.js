@@ -39,11 +39,11 @@ closebtn.addEventListener('click', () => {
 // let backtree = document.getElementById('backtree')
 // let mountain = document.getElementById('mountain')
 
-// window.addEventListener("scroll", () => {
-//     let value = window.scrollY;
-//     text.style.marginTop = value * 1.5 + 'px';
-//     wrapper.style.marginTop = value * 0.5 + 'px';
-
+window.addEventListener("scroll", () => {
+    let value = window.scrollY;
+    // text.style.marginTop = value * 1.5 + 'px';
+    wrapper.style.marginTop = value * 1 + 'px';
+})
 //     righttree.style.marginRight = value * -1.5 + 'px';
 //     righttree.style.marginBottom = value * -1.5 + 'px';
 

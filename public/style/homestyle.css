@@ -10,6 +10,7 @@
     position: relative;
     width: 250px;
     right: 50px;
+    margin-right:250px;
 }
 
 header {
@@ -20,7 +21,7 @@ header {
     width: 100%;
     padding: 20px 100px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     z-index: 99;
 }
@@ -72,33 +73,35 @@ header {
     font-weight: bold;
     margin-left: 40px;
     transition: .5s;
+    margin-left:500px;
 }
 
 .navigation .btnSignup{
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid black;
+    border: 2px solid white;
     outline: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    color: black;
+    color: white;
     font-weight: bold;
     margin-left: 40px;
     transition: .5s;
 }
 
 .navigation .btnLogin:hover {
-    border-color: black;
-    background: #FFF;
-    color: black
-}
-
-.navigation .btnSignup:hover {
     border-color: white;
     background: black;
     color: white;
+}
+
+.navigation .btnSignup:hover {
+    border-color: black;
+    background: #FFF;
+    color: black
+
 }
 
 .background {

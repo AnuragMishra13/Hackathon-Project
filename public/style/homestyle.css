@@ -17,7 +17,7 @@ img{
 
 .footer{
     position:relative;
-    top:-400px;
+    top:0;
     width: 100%;
     text-align: center;
     padding: 100px;
@@ -168,7 +168,7 @@ header {
 }
 
 .wrapper {
-    position: relative;
+    position: absolute;
     width: 400px;
     height: 440px;
     background: transparent;
@@ -182,8 +182,8 @@ header {
     overflow: hidden;
     transform: scale(0);
     transition: transform .5s ease, height .2s ease;
-    top: -800px;
-    margin-left: 750px;
+    top:250px;
+    left:750px;
 }
 
 .wrapper.active-popup {

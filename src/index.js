@@ -23,8 +23,6 @@ app.get("/editor", (req, res) => {
 })
 
 app.get("/userpage", (req, res) => {
-    res.render('userpage',)
-
     res.render('userpage', { username: "Anurag" })
 })
 

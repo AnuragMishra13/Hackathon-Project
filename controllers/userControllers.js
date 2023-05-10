@@ -17,10 +17,10 @@ const postSignup = async (req,res)=>{
                 password:hashPassword
             })
             const token = UserRegister.generateAuthtoken();
-            res.cookie("jwt",token,{
-              expires:new Date(Date.now()+600000),
-              httpOnly:true
-            })
+            // res.cookie("jwt",token,{
+            //   expires:new Date(Date.now()+600000),
+            //   httpOnly:true
+            // })
             return res.redirect("http://localhost:3000/home")
         }
     } catch (error) {
@@ -38,10 +38,10 @@ const postLogin = async (req,res)=>{
         if (matchPassword) {
           const token = check.generateAuthtoken();
           console.log(token);
-          res.cookie("jwt",token,{
-            expires:new Date(Date.now()+600000),
-            httpOnly:true
-          })
+          // res.cookie("jwt",token,{
+          //   expires:new Date(Date.now()+600000),
+          //   httpOnly:true
+          // })
           res.redirect(`http://localhost:3000/home/${check._id}`);
         } else {
           res.send("Invalid");

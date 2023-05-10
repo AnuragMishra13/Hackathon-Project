@@ -3,14 +3,11 @@ const app = express()
 const mongoose = require("mongoose");
 require("dotenv").config();
 const path = require("path");
-const usersRoutes = require("../routes/userRoutes");
-// const usersRoutes = require("../routes/userRoutes");
+const User = require("../models/user")
 const {postSignup,postLogin} = require("../controllers/userControllers");
 
 const PORT = process.env.PORT || 3000; 
 
-app.use('/users',usersRoutes)
-// app.use('/users',usersRoutes)
 app.use(express.json())
 app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,"../public")))
@@ -26,8 +23,18 @@ app.get("/editor",(req,res)=>{
 })
 
 app.get("/userpage",(req,res)=>{
-    res.render('userpage')
+    res.render('userpage',)
 })
+
+app.get("/home/:_id",async (req,res)=>{
+    try {
+       const userDetails = await User.findOne(req.params)
+
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 
 mongoose.connect(process.env.MONGO_URL)
 .then(()=>{

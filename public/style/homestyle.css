@@ -136,8 +136,6 @@ header {
     justify-content: center;
     align-items: center;
     pointer-events: none;
-
-
 }
 
 .wrapper {
@@ -155,7 +153,7 @@ header {
     overflow:hidden;
     transform:scale(0);
     transition: transform .5s ease, height .2s ease;
-    top:-250px;
+    top:-215px;
 
 }
 
@@ -195,15 +193,23 @@ header {
     transform: translateX(0);
 }
 
+
 .wrapper .icon-close {
     position: absolute;
-    top: 0;
-    right: 0;
+    top:0;
+    right:0;
     width: 45px;
     height: 45px;
     cursor: pointer;
     font-size:42px;
     color:white;
+    background-color: black;
+    border-bottom-left-radius: 20px;
+}
+
+.wrapper.active-popup.active .icon-close {
+    background-color:none;
+    display:none;
 }
 
 .form-box h2 {

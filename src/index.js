@@ -25,7 +25,7 @@ app.get("/editor", (req, res) => {
 app.get("/home/:_id", async (req, res) => {
     try {
         const userDetails = await User.findOne(req.params)
-        res.render('userpage',{username:userDetails.username})
+        res.render('userpage',{username:userDetails.username,email:userDetails.email})
     } catch (error) {
         console.log(error)
     }

@@ -5,11 +5,6 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 #logo {
     position: relative;
@@ -127,7 +122,8 @@ header {
     font-size: 90px;
     color:White;
     text-align:center;
-    left:20px;
+    left:0;
+    right:0;
     text-shadow: 0 0 30px rgba(0, 0, 0, 10);
 }
 
@@ -153,8 +149,8 @@ header {
     overflow:hidden;
     transform:scale(0);
     transition: transform .5s ease, height .2s ease;
-    top:-215px;
-
+    top:-220px;
+    margin-left:750px;
 }
 
 .wrapper.active-popup{

@@ -225,15 +225,18 @@ header {
 
 .wrapper .icon-close {
     position: absolute;
-    top: 0;
-    right: 0;
+    top:0;
+    right:0;
     width: 45px;
     height: 45px;
     cursor: pointer;
     font-size: 42px;
     color: white;
+    justify-content: center;
+    align-items: center;
     background-color: black;
     border-bottom-left-radius: 20px;
+    z-index: 1;
 }
 
 .wrapper.active-popup.active .icon-close {

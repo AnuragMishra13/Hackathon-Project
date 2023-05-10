@@ -29,17 +29,19 @@ const postLogin = async (req,res)=>{
     try {
         const password = req.body.password;
         const check = await user.findOne({email:req.body.email});
-        bcrypt.compare(password , check.password).then(()=>{
-            const token = check.generateAuthtoken();
-            console.log(token) ;
-            return res.redirect("http://localhost:3000/home");
-        })
-        res.send("Invalid password");
-
-    } catch (error) {
-        console.log(error);
-        res.send("Wrong Credential")
-    }
+        const matchPassword = bcrypt.compareSync(password, check.password);
+        console.log(matchPassword)
+        if (matchPassword) {
+          const token = check.generateAuthtoken();
+          console.log(token);
+          res.redirect(`http://localhost:3000/home/${check._id}`);
+        } else {
+          res.send("Invalid");
+        }
+      } catch (error) {
+        console.error(error);
+        res.status(500).send("Server Error");
+      }
 }
 
 module.exports = {

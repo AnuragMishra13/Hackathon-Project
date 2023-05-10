@@ -22,16 +22,10 @@ app.get("/editor", (req, res) => {
     res.render("editor");
 })
 
-app.get("/userpage", (req, res) => {
-    res.render('userpage',)
-
-    res.render('userpage', { username: "Anurag" })
-})
-
 app.get("/home/:_id", async (req, res) => {
     try {
         const userDetails = await User.findOne(req.params)
-
+        res.render('userpage',{username:userDetails.username})
     } catch (error) {
         console.log(error)
     }

@@ -85,6 +85,16 @@ header {
     right:400px;
 }
 
+nav p{
+    position:fixed;
+    font-size: 16.1px;
+    color: #FFFF;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 40px;
+
+}
+
 .navigation a::after {
     content: '';
     position: absolute;

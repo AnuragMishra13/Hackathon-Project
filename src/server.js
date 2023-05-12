@@ -3,7 +3,8 @@ const app = express()
 const mongoose = require("mongoose");
 require("dotenv").config();
 const path = require("path");
-const User = require("../models/user")
+const User = require("../models/user");
+const fs = require("fs");
 
 const { postSignup, postLogin } = require("../controllers/userControllers");
 
@@ -21,6 +22,11 @@ app.post("/login", postLogin);
 app.post("/signup", postSignup);
 app.get("/editor", (req, res) => {
     res.render("editor");
+})
+
+app.post("/text.txt",(req,res)=>{
+    const data = req.body.data;
+    fs.writeFileSync('text.html',data.toString())
 })
 
 app.get("/home/:_id", async (req, res) => {

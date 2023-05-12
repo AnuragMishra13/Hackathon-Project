@@ -121,6 +121,9 @@ const panel = () => {
 };
 
 const htmlcode = async() => {
-  var c1 = document.getElementById("sample").contentWindow;
-  console.log(c1.document)
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST','http://localhost:3000/text.txt',true)
+  xhr.setRequestHeader('Content-type','application/JSON');
+  const data = document.getElementById("sample").contentWindow.document.documentElement.outerHTML.toString()
+  xhr.send(JSON.stringify({data:data}));
 };

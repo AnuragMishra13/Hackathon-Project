@@ -4,6 +4,14 @@ const user = require("../models/user");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
+const getLogin = (req,res)=>{
+  res.redirect("http://localhost:3000/home");
+}
+
+const getSignup = (req,res)=>{
+  res.redirect("http://localhost:3000/home");
+}
+
 
 const postSignup = async (req,res)=>{
     try {
@@ -36,8 +44,8 @@ const postLogin = async (req,res)=>{
         const matchPassword = bcrypt.compareSync(password, check.password);
         console.log(matchPassword)
         if (matchPassword) {
-          const token = check.generateAuthtoken();
-          console.log(token);
+          const token = jwt.sign({_id:check._id.toString()},process.env.SECRETKEY)
+          console.log(token)
           res.cookie("jwt",token,{
             expires:new Date(Date.now()+600000),
             httpOnly:true
@@ -53,5 +61,5 @@ const postLogin = async (req,res)=>{
 }
 
 module.exports = {
-    postLogin,postSignup
+    postLogin,postSignup,getLogin,getSignup
 }

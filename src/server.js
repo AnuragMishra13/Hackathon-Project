@@ -3,13 +3,16 @@ const app = express()
 const mongoose = require("mongoose");
 require("dotenv").config();
 const path = require("path");
-const User = require("../models/user")
+const cookieParser = require("cookie-parser");
+const User = require("../models/user");
+const auth = require("../middleware/auth");
 
-const { postSignup, postLogin } = require("../controllers/userControllers");
+const { postSignup, postLogin , getLogin , getSignup} = require("../controllers/userControllers");
 
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json())
+app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "../public")))
 app.set("view engine", "ejs");
@@ -17,13 +20,15 @@ app.set("view engine", "ejs");
 app.get("/home", (req, res) => {
     res.render("index")
 })
-app.post("/login", postLogin);
-app.post("/signup", postSignup);
-app.get("/editor", (req, res) => {
+
+app.route("/login").get(getLogin).post(postLogin);
+app.route("/signup").get(getSignup).post(postSignup);
+
+app.get("/editor",auth, (req, res) => {
     res.render("editor");
 })
 
-app.get("/home/:_id", async (req, res) => {
+app.get("/home/:_id",async (req, res) => {
     try {
         const userDetails = await User.findOne(req.params)
         res.render('userpage',{username:userDetails.username,email:userDetails.email})

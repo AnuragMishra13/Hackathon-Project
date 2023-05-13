@@ -15,12 +15,22 @@ img{
 
 
 
+
 .footer{
     position:relative;
     top:0;
     width: 100%;
+    font-size:100px;
     text-align: center;
     padding: 100px;
+    color:white;
+}
+
+
+h2 {
+    color: white;
+    font-size:48px;
+    margin-bottom: 60px;
 }
 
 
@@ -193,7 +203,7 @@ nav p{
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
-    backdrop-filter: blur(100px);
+    backdrop-filter: blur(40px);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     display: flex;
     justify-content: center;
@@ -203,6 +213,7 @@ nav p{
     transition: transform .5s ease, height .2s ease;
     top:50%;
     left:50%;
+    z-index: 9999;
 }
 
 .wrapper.active-popup {
@@ -361,11 +372,6 @@ nav p{
     text-decoration: underline;
 }
 
-h2 {
-    color: white;
-    font-size:48px;
-    margin-bottom: 60px;
-}
 
 .footer h1{
     color:white;

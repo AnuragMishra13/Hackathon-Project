@@ -35,10 +35,9 @@ app.get("/editor", auth, async (req, res) => {
 
 app.post("/editor",async(req,res)=>{
     const data = req.body.data;
-    fs.writeFileSync('text.html',data.toString())
-    fs.writeFileSync('text.txt',data.toString())
-    const dataRead = fs.readFileSync('text.txt',{ encoding: 'utf8', flag: 'r' })
-    res.status(200).send(dataRead);
+    fs.writeFileSync('../public/text.html',data.toString())
+    fs.writeFileSync('../public/text.txt',data.toString())
+    res.status(200).send("Saved");
 })
 
 app.get("/home/:_id",auth ,async (req, res) => {

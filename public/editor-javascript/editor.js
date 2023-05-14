@@ -109,7 +109,7 @@ const heading = () => {
   element.appendChild(heading);
 };
 
-const text = () => {
+const para = () => {
   var c1 = document.getElementById("canva").contentWindow;
   var text = c1.document.createElement("p");
   var innertext = prompt("Enter the text : ");
@@ -117,12 +117,8 @@ const text = () => {
   var element = c1.document.getElementById("new");
   element.appendChild(text);
 };
-const panel = () => {
-  document.querySelector(".wrapper").classList.toggle("side-panel-open");
-};
 
 const htmlcode = async() => {
-  console.log("working")
   var c1 = document.getElementById("canva").contentWindow;
   const xhr = new XMLHttpRequest();
   xhr.open('POST','http://localhost:3000/editor',true)
@@ -143,7 +139,7 @@ for (var i = 0; i < arrow.length; i++) {
 }
 let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".bx-menu");
-console.log(sidebarBtn);
+// console.log(sidebarBtn);
 sidebarBtn.addEventListener("click", ()=>{
   sidebar.classList.toggle("close");
 });

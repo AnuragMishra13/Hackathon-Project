@@ -10,8 +10,7 @@ const auth = async (req,res,next)=>{
         const existingUser = await user.findOne({_id:verifyUser._id});
         next();
     } catch (error) {
-        res.send('alert("Token not found") ; window.location.href = "/home";')
-        res.redirect("http://localhost:3000/home") 
+        res.send('token not found')
     }
 }
 

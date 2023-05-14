@@ -26,7 +26,7 @@ const postSignup = async (req,res)=>{
             })
             const token = UserRegister.generateAuthtoken();
             res.cookie("token",token,{
-              expires:new Date(Date.now()+600000),
+              expires:new Date(Date.now()+60000000),
               httpOnly:true
             })
             return res.redirect("http://localhost:3000/home")
@@ -45,7 +45,7 @@ const postLogin = async (req,res)=>{
         if (matchPassword) {
           const token = jwt.sign({_id:check._id.toString()},process.env.SECRETKEY)
           res.cookie("token",token,{
-            expires:new Date(Date.now()+600000),
+            expires:new Date(Date.now()+60000000),
             httpOnly:true
           })
           res.redirect(`http://localhost:3000/home/${check._id}`);

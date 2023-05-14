@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -49,4 +49,57 @@
     <script type="text/javascript" src="/editor-javascript/editor.js"></script>
   </body>
   
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="editorstyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>Editor</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="/logo.png" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <img src="/images/user.png" class="userpic" onclick="togglemenu()">
+
+            <div class="profilemenu" id="submenu">
+                <div class="submenu">
+                    <div class="userinfo">
+                        <img src="/images/user.png">
+                        <h2>Username</h2>
+                    </div>
+                    <hr>
+
+                    <a href="#" class="submenulink">
+                    <ion-icon name="create-outline"></ion-icon>
+                    <p>Edit Profile</p>
+                    <span>></span>
+                    </a>
+
+                    
+                    <a href="#" class="submenulink">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                        <p>Log out</p>
+                        <span>></span>
+                        </a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="/app.js"></script>
+</body>
 </html>

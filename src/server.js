@@ -5,7 +5,7 @@ require("dotenv").config();
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const User = require("../models/user");
-const auth = require("../middleware/auth");
+// const auth = require("../middleware/auth");
 
 const { postSignup, postLogin , getLogin , getSignup} = require("../controllers/userControllers");
 
@@ -24,7 +24,7 @@ app.get("/home", (req, res) => {
 app.route("/login").get(getLogin).post(postLogin);
 app.route("/signup").get(getSignup).post(postSignup);
 
-app.get("/editor",auth, (req, res) => {
+app.get("/editor", (req, res) => {
     res.render("editor");
 })
 

@@ -36,7 +36,9 @@ app.get("/editor", auth, async (req, res) => {
 app.post("/editor",async(req,res)=>{
     const data = req.body.data;
     fs.writeFileSync('text.html',data.toString())
-    res.status(200).send("ok");
+    fs.writeFileSync('text.txt',data.toString())
+    const dataRead = fs.readFileSync('text.txt',{ encoding: 'utf8', flag: 'r' })
+    res.status(200).send(dataRead);
 })
 
 app.get("/home/:_id",auth ,async (req, res) => {

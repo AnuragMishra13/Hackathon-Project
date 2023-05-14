@@ -128,6 +128,9 @@ const htmlcode = async() => {
   xhr.open('POST','http://localhost:3000/editor',true)
   xhr.setRequestHeader('Content-type','application/JSON');
   const data = c1.document.documentElement.outerHTML.toString()
+  xhr.onload = function(){
+    alert(this.responseText);
+  }
   xhr.send(JSON.stringify({data:data}));
 };
 

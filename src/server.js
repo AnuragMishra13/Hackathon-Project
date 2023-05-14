@@ -28,7 +28,7 @@ app.get("/editor", (req, res) => {
     res.render("editor");
 })
 
-app.get("/home/:_id", auth ,async (req, res) => {
+app.get("/home/:_id",async (req, res) => {
     try {
         const userDetails = await User.findOne(req.params)
         res.render('userpage',{username:userDetails.username,email:userDetails.email})

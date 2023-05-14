@@ -124,6 +124,7 @@ body{
   display: none;
 }
 .sidebar .nav-links li{
+  margin-top: 10px;
   position: relative;
   list-style: none;
   transition: all 0.4s ease;

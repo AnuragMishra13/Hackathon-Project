@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
   }
@@ -61,4 +61,137 @@ body {
 
   .side-panel ul li{
     padding-bottom: 10px;
-  }
+  } */
+
+  *{
+    margin:0;
+    padding:0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    min-height: 100vh;
+    background:#eceaff;
+    color:#525252
+}
+
+nav{
+    background: #1a1a1a;
+    width:100%;
+    padding: 10px 10%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+}
+
+.logo{
+    width:40%;
+}
+
+.userpic{
+    width:80px;
+    border-radius: 50%;
+    cursor:pointer;
+    margin-left:30px;
+}
+
+nav ul{
+    width:100%;
+    text-align:right;
+}
+
+nav ul li{
+    display:inline-block;
+    list-style-type:none;
+    margin:10px 20px; 
+    font-size:24px 
+}
+
+nav ul li a{
+    color:#ffffff;
+    text-decoration: none;
+}
+
+.profilemenu{
+    position:absolute;
+    top:100%;
+    right:10%;
+    width:320px;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.5s;
+}
+
+.profilemenu.openmenu{
+    max-height:400px
+}
+
+.submenu{
+    background:white;
+    padding:10px;
+}
+
+.userinfo{
+    display:flex;
+    align-items: center;
+}
+
+.userinfo h2{
+    font-weight:bold;
+}
+
+.userinfo img{
+    width:60px;
+    border-radius: 50%;
+    margin-right:20px;
+}
+
+.submenu hr{
+    border:0;
+    height:1px;
+    width:100%;
+    background:#ccc;
+    margin:15px 0 10px;
+}
+
+.submenulink{
+    display:flex;
+    align-items: center;
+    text-decoration:none;
+    color:#525252;
+    margin:12px 0;
+}
+
+.submenulink p{
+    width:100%;
+    margin-left:5px;
+    font-size: 20px;
+}
+
+.submenulink ion-icon{
+    display:absolute;
+    justify-content: center;
+    align-items: center;
+    font-size:25px;
+    padding:8px;
+    width:40px;
+    background:#e5e5e5;
+    border-radius: 50%;
+    margin-right:15px;
+}
+
+.submenulink span{
+    font-size:22px; 
+    transition:transform 0.5s ease-out;  
+}
+
+.submenulink:hover span{
+    transform:translateX(5px)
+}
+
+.submenulink:hover p{
+    font-weight:bold
+}

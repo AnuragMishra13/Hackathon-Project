@@ -5,7 +5,7 @@ require("dotenv").config();
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const User = require("../models/user");
-// const auth = require("../middleware/auth");
+const auth = require("../middleware/auth");
 
 const { postSignup, postLogin , getLogin , getSignup} = require("../controllers/userControllers");
 
@@ -24,11 +24,11 @@ app.get("/home", (req, res) => {
 app.route("/login").get(getLogin).post(postLogin);
 app.route("/signup").get(getSignup).post(postSignup);
 
-app.get("/editor", (req, res) => {
+app.get("/editor", auth, (req, res) => {
     res.render("editor");
 })
 
-app.get("/home/:_id",async (req, res) => {
+app.get("/home/:_id",auth ,async (req, res) => {
     try {
         const userDetails = await User.findOne(req.params)
         res.render('userpage',{username:userDetails.username,email:userDetails.email})

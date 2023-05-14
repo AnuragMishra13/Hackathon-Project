@@ -50,56 +50,76 @@
   </body>
   
 </html> -->
+
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="editorstyles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
-    <title>Editor</title>
-</head>
-
+    <title> Editor </title>
+    <link rel="stylesheet" href="/style/editorstyles.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+   </head>
 <body>
-    <header>
-        <nav>
-            <img src="/logo.png" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <img src="/images/user.png" class="userpic" onclick="togglemenu()">
-
-            <div class="profilemenu" id="submenu">
-                <div class="submenu">
-                    <div class="userinfo">
-                        <img src="/images/user.png">
-                        <h2>Username</h2>
-                    </div>
-                    <hr>
-
-                    <a href="#" class="submenulink">
-                    <ion-icon name="create-outline"></ion-icon>
-                    <p>Edit Profile</p>
-                    <span>></span>
-                    </a>
-
-                    
-                    <a href="#" class="submenulink">
-                        <ion-icon name="log-out-outline"></ion-icon>
-                        <p>Log out</p>
-                        <span>></span>
-                        </a>
-                </div>
-            </div>
-
-        </nav>
-    </header>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="/app.js"></script>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bxs-edit' ></i>
+      <span class="logo_name">Versatile</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Add Components</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Add Components</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Add Components</a></li>
+          <li><a href="#" onclick="navbar()">Nav Bar</a></li>
+          <li><a href="#" onclick="accordian()">Accordian</a></li>
+          <li><a href="#" onclick="heading()">Heading</a></li>
+          <li><a href="#" onclick="text()">Text</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-code-alt' ></i>
+          <span class="link_name">Extract Code</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Extract Code</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <img src="images/user.png" alt="profileImg">
+      </div>
+      <div>
+        <div class="profile_name">Username</div>
+      </div>
+      <i class='bx bx-log-out'></i>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+    </div>
+    <div class="main">
+      <iframe id="canva" src="blank.html"></iframe>
+    </div>
+  </section>
+  <script src="/editor-javascript/editor.js"></script>
 </body>
 </html>

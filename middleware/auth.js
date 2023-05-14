@@ -4,8 +4,8 @@ require("dotenv").config();
 
 const auth = async (req,res,next)=>{
     try {
-        const token = req.cookie.jwt;
-        const verifyUser = jwt.sign(token,process.env.SECRETKEY)
+        const token = req.cookies.token;
+        const verifyUser = jwt.verify(token,process.env.SECRETKEY)
         console.log(verifyUser);
         next();
     } catch (error) {

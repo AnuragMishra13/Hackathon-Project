@@ -25,7 +25,7 @@ const postSignup = async (req,res)=>{
                 password:hashPassword
             })
             const token = UserRegister.generateAuthtoken();
-            res.cookie("jwt",token,{
+            res.cookie("token",token,{
               expires:new Date(Date.now()+600000),
               httpOnly:true
             })
@@ -42,11 +42,9 @@ const postLogin = async (req,res)=>{
         const password = req.body.password;
         const check = await user.findOne({email:req.body.email});
         const matchPassword = bcrypt.compareSync(password, check.password);
-        console.log(matchPassword)
         if (matchPassword) {
           const token = jwt.sign({_id:check._id.toString()},process.env.SECRETKEY)
-          console.log(token)
-          res.cookie("jwt",token,{
+          res.cookie("token",token,{
             expires:new Date(Date.now()+600000),
             httpOnly:true
           })

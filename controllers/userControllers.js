@@ -4,6 +4,14 @@ const user = require("../models/user");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
+const getLogin = (req,res)=>{
+  res.redirect("http://localhost:3000/home");
+}
+
+const getSignup = (req,res)=>{
+  res.redirect("http://localhost:3000/home");
+}
+
 
 const postSignup = async (req,res)=>{
     try {
@@ -17,10 +25,10 @@ const postSignup = async (req,res)=>{
                 password:hashPassword
             })
             const token = UserRegister.generateAuthtoken();
-            // res.cookie("jwt",token,{
-            //   expires:new Date(Date.now()+600000),
-            //   httpOnly:true
-            // })
+            res.cookie("token",token,{
+              expires:new Date(Date.now()+60000000),
+              httpOnly:true
+            })
             return res.redirect("http://localhost:3000/home")
         }
     } catch (error) {
@@ -34,14 +42,12 @@ const postLogin = async (req,res)=>{
         const password = req.body.password;
         const check = await user.findOne({email:req.body.email});
         const matchPassword = bcrypt.compareSync(password, check.password);
-        console.log(matchPassword)
         if (matchPassword) {
-          const token = check.generateAuthtoken();
-          console.log(token);
-          // res.cookie("jwt",token,{
-          //   expires:new Date(Date.now()+600000),
-          //   httpOnly:true
-          // })
+          const token = jwt.sign({_id:check._id.toString()},process.env.SECRETKEY)
+          res.cookie("token",token,{
+            expires:new Date(Date.now()+60000000),
+            httpOnly:true
+          })
           res.redirect(`http://localhost:3000/home/${check._id}`);
         } else {
           res.send("Invalid");
@@ -53,5 +59,5 @@ const postLogin = async (req,res)=>{
 }
 
 module.exports = {
-    postLogin,postSignup
+    postLogin,postSignup,getLogin,getSignup
 }

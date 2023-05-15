@@ -4,6 +4,8 @@ const signuplink = document.querySelector('.signup-link')
 const loginpop = document.querySelector('.btnLogin')
 const signuppop = document.querySelector('.btnSignup')
 const closebtn = document.querySelector('.icon-close')
+let submenu=document.getElementById("submenu")
+
 
 signuplink.addEventListener('click', () => {
     window.history.pushState(null, null, "/signup")
@@ -41,9 +43,11 @@ closebtn.addEventListener('click', () => {
 
 window.addEventListener("scroll", () => {
     let value = window.scrollY;
-    // text.style.marginTop = value * 1.5 + 'px';
     wrapper.style.marginTop = value * 1 + 'px';
 })
+    // text.style.marginTop = value * 1.5 + 'px';
+
+
 //     righttree.style.marginRight = value * -1.5 + 'px';
 //     righttree.style.marginBottom = value * -1.5 + 'px';
 
@@ -52,4 +56,5 @@ window.addEventListener("scroll", () => {
 
 //     backtree.style.marginTop = value * 1.5 + 'px';
 //     mountain.style.marginTop = value * 0.5 + 'px';
-// })
+// })let submenu=document.getElementById("submenu")
+

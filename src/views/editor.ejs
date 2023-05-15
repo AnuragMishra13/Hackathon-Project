@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -50,4 +50,82 @@
     <script type="text/javascript" src="/editor-javascript/editor.js"></script>
   </body>
   
+</html> -->
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Editor </title>
+    <link rel="stylesheet" href="/style/editorstyles.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+   </head>
+<body>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bxs-edit' ></i>
+      <span class="logo_name">Versatile</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Add Components</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Add Components</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Add Components</a></li>
+          <li><a href="#" onclick="navbar()">Navbar</a></li>
+          <li><a href="#" onclick="accordian()">Accordian</a></li>
+          <li><a href="#" onclick="heading()">Heading</a></li>
+          <li><a href="#" onclick="para()">Text</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="text.txt">
+          <i class='bx bx-code-alt'></i>
+          <span class="link_name" >Extract Code</span>
+        </a>
+        <a href="text.html">
+          <i class='bx bxl-html5' ></i>
+          <span class="link_name">Open Site</span>
+        </a>
+        <a href="#">
+          <i class='bx bx-save'></i>
+          <span class="link_name" onclick="htmlcode()">Save</span>
+        </a>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <img src="images/user.png" alt="profileImg">
+      </div>
+      <div>
+        <div class="profile_name"><%=username%></div>
+      </div>
+      <i class='bx bx-log-out'></i>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+    </div>
+    <div class="main">
+      <iframe id="canva" src="blank.html"></iframe>
+    </div>
+  </section>
+  <script src="/editor-javascript/editor.js"></script>
+</body>
 </html>

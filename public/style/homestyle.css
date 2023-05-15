@@ -189,6 +189,7 @@ header {
 .wrapper.active-popup {
     transition: transform .5s ease, height .2s ease;
     transform: translate(-50%,-50%);
+    z-index: 9999;
 }
 
 .wrapper.active {

@@ -169,12 +169,14 @@ header {
 
 .wrapper {
     position: absolute;
+    left:39.5%;
+    top:25%;
     width: 400px;
     height: 440px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
-    backdrop-filter: blur(100px);
+    backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     display: flex;
     justify-content: center;
@@ -182,13 +184,14 @@ header {
     overflow: hidden;
     transform: scale(0);
     transition: transform .5s ease, height .2s ease;
-    top:50%;
-    left:50%;
 }
 
 .wrapper.active-popup {
+    position: absolute;
+    left:39.5%;
+    top:25%;
+    transform:scale(1);
     transition: transform .5s ease, height .2s ease;
-    transform: translate(-50%,-50%);
     z-index: 9999;
 }
 

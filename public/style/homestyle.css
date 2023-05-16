@@ -218,7 +218,7 @@ header.scrolled nav .btnLogin:hover{
 
 .wrapper.active-popup {
     position: absolute;
-    left:39.5%;
+    left:36.5%;
     top:25%;
     transform:scale(1);
     transition: transform .5s ease, height .2s ease;

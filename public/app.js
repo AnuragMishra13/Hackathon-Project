@@ -34,29 +34,10 @@ closebtn.addEventListener('click', () => {
     wrapper.classList.remove('active-popup');
 })
 
-// let text = document.getElementById('text')
-// let sky = document.getElementById('sky')
-// let righttree = document.getElementById('righttree')
-// let lefttree = document.getElementById('lefttree')
-// let backtree = document.getElementById('backtree')
-// let mountain = document.getElementById('mountain')
-
 window.addEventListener("scroll", () => {
     let value = window.scrollY;
     wrapper.style.marginTop = value * 1 + 'px';
 })
-    // text.style.marginTop = value * 1.5 + 'px';
-
-
-//     righttree.style.marginRight = value * -1.5 + 'px';
-//     righttree.style.marginBottom = value * -1.5 + 'px';
-
-//     lefttree.style.marginLeft = value * -1.5 + 'px';
-//     lefttree.style.marginBottom = value * -1.5 + 'px';
-
-//     backtree.style.marginTop = value * 1.5 + 'px';
-//     mountain.style.marginTop = value * 0.5 + 'px';
-// })let submenu=document.getElementById("submenu")
 
 document.addEventListener('scroll',()=>{
     const header=document.querySelector("header")

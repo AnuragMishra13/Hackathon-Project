@@ -70,7 +70,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: transparent;
+    transition:background-color 0.4s ease-in-out;
     z-index: 99;
+}
+
+
+header.scrolled{
+    background-color: rgb(19, 15, 50);
+    opacity: 1;
 }
 
 
@@ -82,7 +90,16 @@ header {
     font-weight: bold;
     margin-left: 40px;
     padding-top:10px;
-    right:400px;
+
+
+}
+
+header nav a{
+    transition:color 0.4s ease-in-out; 
+}
+
+header.scrolled nav a{
+    color:white;
 }
 
 .navigation a::after {
@@ -104,6 +121,13 @@ header {
     transform: scaleX(1);
 }
 
+.navigation ul {
+    display:flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+
 
 .navigation .btnLogin {
     position: relative;
@@ -118,7 +142,7 @@ header {
     color: #FFFF;
     font-weight: bold;
     transition: .5s;
-    margin-left: 40px;
+    margin-left: 450px;
 }
 
 .navigation .btnSignup {
@@ -141,6 +165,12 @@ header {
     border-color: white;
     background: black;
     color: white;
+}
+
+header.scrolled nav .btnLogin:hover{
+    border-color: black;
+    background: #FFF;
+    color: black
 }
 
 .navigation .btnSignup:hover {
@@ -196,7 +226,7 @@ header {
 }
 
 .wrapper.active {
-    width: 450px;
+    width: 400px;
     height: 550px;
 }
 

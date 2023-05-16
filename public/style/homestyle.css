@@ -90,8 +90,6 @@ header.scrolled{
     font-weight: bold;
     margin-left: 40px;
     padding-top:10px;
-
-
 }
 
 header nav a{
@@ -218,7 +216,7 @@ header.scrolled nav .btnLogin:hover{
 
 .wrapper.active-popup {
     position: absolute;
-    left:36.5%;
+    left:39%;
     top:25%;
     transform:scale(1);
     transition: transform .5s ease, height .2s ease;

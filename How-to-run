@@ -1,0 +1,9 @@
+To run this project follow these step
+1)Open VS Code
+2)Change the terminal to Git Bash
+3)Type "cd src"
+4)After entering src folder, type "nodemon server"
+5)After the server starts running
+6)Open browser and type the following in address bar "localhost:<given server port in the terminal>/home".
+
+You have successfully ran this project.
